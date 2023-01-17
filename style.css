@@ -15,12 +15,12 @@
 
 body {
     font-family: 'Outfit', sans-serif;
-    background: var(--clr-main-bg);   
-    max-height: 100vh;
+    background: var(--clr-main-bg);
 }
 
 .card-container {
     margin: auto;
+    margin-top: 150px;
     background: var(--clr-card-bg);
     height: 595px;
     width: 340px;
