@@ -16,11 +16,16 @@
 body {
     font-family: 'Outfit', sans-serif;
     background: var(--clr-main-bg);
+    
+    /* note 1 [1/2]: write the following lines to have the content vertically centered (regardless of the body's height) : */
+    min-height: 100vh;
+    display: grid;
+    align-content: center;  
 }
 
 .card-container {
     margin: auto;
-    margin-top: 150px;
+/*     margin-top: 150px;*/ /*<<== note 1 [2/2]: then delete this line */ */
     background: var(--clr-card-bg);
     height: 595px;
     width: 340px;
@@ -53,9 +58,9 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 10px;
-    opacity: 0;
+/*     opacity: 0; */  /*note 2 [1/5]: For the icon-view's problem opacity : deleted this one*/
     transition: .5s ease;
-    background-color: var(--cyan);
+/*     background-color: var(--cyan); */  /*note 2 [2/5]: deleted this one too */
 }
 
 .img-view {
@@ -66,11 +71,18 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    display: none;  /*note 2 [3/5] : add this line to hide icon-view*/
 }
 
 .img-container:hover .overlay {
     cursor: pointer;
-    opacity: 0.5;    
+/*     opacity: 0.5;     */  /*note 2 [4/5]: deleted this line and replaced it by: */
+    background-color: hsla(178, 100%, 50%, 0.5);
+}
+
+/* note 2 [5/5]: add the following lines to display icon-view when hovering */
+.img-container:hover .img-view {
+    display: block;
 }
 
 
